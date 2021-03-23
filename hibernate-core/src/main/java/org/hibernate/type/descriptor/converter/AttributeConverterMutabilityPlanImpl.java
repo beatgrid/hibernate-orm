@@ -21,7 +21,7 @@ import org.hibernate.type.descriptor.java.MutableMutabilityPlan;
  * @author Steve Ebersole
  */
 public class AttributeConverterMutabilityPlanImpl<T> extends MutableMutabilityPlan<T> {
-	private final JpaAttributeConverter converter;
+	private final transient JpaAttributeConverter converter;
 
 	public AttributeConverterMutabilityPlanImpl(JpaAttributeConverter converter) {
 		this.converter = converter;

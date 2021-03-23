@@ -36,7 +36,7 @@ import org.jboss.logging.Logger;
 public class AttributeConverterSqlTypeDescriptorAdapter implements SqlTypeDescriptor {
 	private static final Logger log = Logger.getLogger( AttributeConverterSqlTypeDescriptorAdapter.class );
 
-	private final JpaAttributeConverter converter;
+	private final transient JpaAttributeConverter converter;
 	private final SqlTypeDescriptor delegate;
 	private final JavaTypeDescriptor intermediateJavaTypeDescriptor;
 

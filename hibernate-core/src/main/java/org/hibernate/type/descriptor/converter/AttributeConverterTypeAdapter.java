@@ -6,8 +6,11 @@
  */
 package org.hibernate.type.descriptor.converter;
 
+import org.hibernate.HibernateException;
+import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
 import org.hibernate.type.AbstractSingleColumnStandardBasicType;
+import org.hibernate.type.Type;
 import org.hibernate.type.descriptor.java.ImmutableMutabilityPlan;
 import org.hibernate.type.descriptor.java.JavaTypeDescriptor;
 import org.hibernate.type.descriptor.java.MutabilityPlan;
@@ -30,7 +33,7 @@ public class AttributeConverterTypeAdapter<T> extends AbstractSingleColumnStanda
 
 	private final Class modelType;
 	private final Class jdbcType;
-	private final JpaAttributeConverter<? extends T,?> attributeConverter;
+	private final transient JpaAttributeConverter<? extends T,?> attributeConverter;
 
 	private final MutabilityPlan<T> mutabilityPlan;
 
